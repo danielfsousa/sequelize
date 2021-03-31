@@ -3,3 +3,4 @@ rules:
   - base: main
     upstream: sequelize:main
     mergeMethod: merge
+label: "automerge"
