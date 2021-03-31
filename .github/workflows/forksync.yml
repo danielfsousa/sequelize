@@ -16,3 +16,4 @@ jobs:
           owner: sequelize
           base: main
           head: main
+          auto_approve: false
