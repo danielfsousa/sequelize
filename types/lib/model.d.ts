@@ -875,7 +875,7 @@ export interface UpdateOptions<TAttributes = any> extends Logging, Transactionab
   /**
    * Return the affected rows (only for postgres)
    */
-  returning?: boolean;
+  returning?: boolean | (keyof TAttributes)[];
 
   /**
    * How many rows to update (only for mysql and mariadb)
@@ -2709,6 +2709,7 @@ export abstract class Model<TModelAttributes extends {} = any, TCreationAttribut
   /**
    * Returns the previous value for key from `_previousDataValues`.
    */
+  public previous(): Partial<TCreationAttributes>;
   public previous<K extends keyof TCreationAttributes>(key: K): TCreationAttributes[K] | undefined;
 
   /**
